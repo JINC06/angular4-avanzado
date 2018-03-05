@@ -24,6 +24,11 @@ Nombre del parque:
 
 <hr/>
 
+<parques 
+        [nombre]="'Nombre por defecto'" 
+        [metros_cuadrados]="599"
+        (pasameLosDatos)="verDatosParque($event)" ></parques>
+
 <p *ngIf="nombreDelParque" >
     Hijo:
     <parques 

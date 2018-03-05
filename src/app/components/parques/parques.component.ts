@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -7,7 +7,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     styleUrls: ['./parques.component.css']
 })
 
-export class ParquesComponent {
+export class ParquesComponent implements OnChanges {
+    
     @Input() nombre:  string;
     @Input('metros_cuadrados') metros: number;
     public vegetacion: string;
@@ -20,6 +21,12 @@ export class ParquesComponent {
         this.metros = 450;
         this.vegetacion = 'Alta';
         this.abierto = false;
+    }
+
+    // Este evento pasa cuando se hace un cambio en las propiedas del componente
+    ngOnChanges(changes: SimpleChanges): void {
+        //console.log(changes);
+        console.log("Existen cambios en las propiedades");
     }
 
     emitirEvento(){
