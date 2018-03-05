@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck, OnDestroy } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -7,7 +7,8 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnIni
     styleUrls: ['./parques.component.css']
 })
 
-export class ParquesComponent implements OnChanges, OnInit, DoCheck {
+export class ParquesComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
+    
     
     @Input() nombre:  string;
     @Input('metros_cuadrados') metros: number;
@@ -37,6 +38,10 @@ export class ParquesComponent implements OnChanges, OnInit, DoCheck {
     // se ejecuta cada evento dentro de la pagina
     ngDoCheck(): void {
         //console.log('El DoCheck se ha ejecutado');
+    }
+
+    ngOnDestroy(): void {
+        console.log('ngOnDestroy Se va a eliminar el componente')
     }
 
     emitirEvento(){
