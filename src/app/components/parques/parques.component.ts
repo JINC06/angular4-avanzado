@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -7,7 +7,8 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from
     styleUrls: ['./parques.component.css']
 })
 
-export class ParquesComponent implements OnChanges {
+export class ParquesComponent implements OnChanges, OnInit {
+    
     
     @Input() nombre:  string;
     @Input('metros_cuadrados') metros: number;
@@ -27,6 +28,11 @@ export class ParquesComponent implements OnChanges {
     ngOnChanges(changes: SimpleChanges): void {
         //console.log(changes);
         console.log("Existen cambios en las propiedades");
+    }
+
+    //Cuando se carga la directiva cuando es lanzado solo se hace una vez
+    ngOnInit(): void {
+        console.log('Metodo on init lanzado');
     }
 
     emitirEvento(){
