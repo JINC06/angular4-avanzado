@@ -6,7 +6,7 @@ import { Component, DoCheck, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements DoCheck, OnInit {
-  
+
   title = 'NGZOO';
   emailContacto: string;
 
@@ -21,7 +21,7 @@ export class AppComponent implements DoCheck, OnInit {
     //console.log(localStorage.getItem('emailContacto'));
   }
 
-  borrarEmail(){
+  borrarEmail() {
     localStorage.removeItem('emailContacto');
     localStorage.clear();
     this.emailContacto = null;

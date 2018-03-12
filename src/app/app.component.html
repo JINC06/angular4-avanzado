@@ -1,43 +1,43 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="navigation col-lg-12" >
-    <nav class="navbar navbar-default" >
-        <div class="container-fluid" >
+<div class="navigation col-lg-12">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
 
-            <div class="navbar-header" >
+            <div class="navbar-header">
                 <a [routerLink]="['/home']" class="navbar-brand">{{title}}</a>
             </div>
 
-            <ul class="nav navbar-nav" >
+            <ul class="nav navbar-nav">
                 <li>
-                    <a [routerLink]="['/home']">
+                    <a [routerLink]="['/home']" [routerLinkActive]="['active']">
                         <span class="glyphicon glyphicon-home"></span>Inicio
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['/animales']">
+                    <a [routerLink]="['/animales']" [routerLinkActive]="['active']">
                         <span class="glyphicon glyphicon-star"></span>Animales
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['/cuidadores']">
-                        <span class="glyphicon glyphicon-star"></span>Cuidadores
+                    <a [routerLink]="['/cuidadores']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-user"></span>Cuidadores
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['/tienda']">
-                        <span class="glyphicon glyphicon-star"></span>Tienda
+                    <a [routerLink]="['/tienda']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-gift"></span>Tienda
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['/contacto']">
-                        <span class="glyphicon glyphicon-star"></span>Contacto
+                    <a [routerLink]="['/contacto']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-comment"></span>Contacto
                     </a>
                 </li>
-                <li class="hidden" >
+                <li class="hidden">
                     <span *ngIf="emailContacto">
                         <strong>Email de contacto:</strong> {{emailContacto}}
                         <button (click)="borrarEmail()" >Eliminar email de contacto</button>
-                    </span>                            
+                    </span>
                 </li>
             </ul>
 
@@ -45,9 +45,6 @@
     </nav>
 </div>
 
-
-<!-- Cuando se implementa el routing se debe de dejar esto -->
-<!--tienda></tienda-->
-
-<hr/>
-<router-outlet></router-outlet>
+<div class="col-lg-11">
+    <router-outlet></router-outlet>
+</div>
