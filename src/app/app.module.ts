@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 import { routing, appRoutingProviders  } from './app.routing';
 
 // Importar Modulos
@@ -34,6 +36,8 @@ import { KeepersComponent } from './components/keepers/keepers.component';
     BrowserModule,
     FormsModule,
     routing,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
     ModuloEmailModule,
     AdminModule
   ],

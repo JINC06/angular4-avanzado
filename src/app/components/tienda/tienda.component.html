@@ -1,3 +1,17 @@
+<a class="boton_activo btn btn-success" [@marcar]="state" (click)="cambiarEstado(state)">
+    <span *ngIf="state == 'inactive'">Boton inactivo</span>
+    <span *ngIf="state == 'active'">Boton activado</span>
+</a>
+<div></div>
+
+<hr>
+<h4>Animaciones CSS3</h4>
+<a class="boton_transiciones">Transiciones</a>
+
+<div class="clearfix"></div>
+<div class="caja_animada"></div>
+
+<hr/>
 <h4>Utilizar jquery dentro de angular</h4>
 <button id="botonjq">
     Mostrar textos
