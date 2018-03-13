@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'contact',
   templateUrl: './contact.component.html'
 })
 export class ContactComponent implements OnInit {
-    
+
     title = 'Contacto';
     emailContacto: string;
 
@@ -13,12 +14,8 @@ export class ContactComponent implements OnInit {
         console.log('contact.component cargado');
     }
 
-    guardarEmail(){
-        // console.log(this.emailContacto);
-        
+    guardarEmail() {
         localStorage.setItem('emailContacto', this.emailContacto);
-        //console.log(localStorage.getItem('emailContacto'));
-        
     }
 
 }
