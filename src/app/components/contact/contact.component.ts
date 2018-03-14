@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { fadeIn } from '../animations';
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'contact',
-  templateUrl: './contact.component.html'
+  templateUrl: './contact.component.html',
+  animations: [ fadeIn ]
 })
 export class ContactComponent implements OnInit {
 
