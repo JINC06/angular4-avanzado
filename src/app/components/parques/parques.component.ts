@@ -8,9 +8,8 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnIni
 })
 
 export class ParquesComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
-    
-    
     @Input() nombre:  string;
+    // tslint:disable-next-line:no-input-rename
     @Input('metros_cuadrados') metros: number;
     public vegetacion: string;
     public abierto: boolean;
@@ -26,26 +25,26 @@ export class ParquesComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
 
     // Este evento pasa cuando se hace un cambio en las propiedas del componente
     ngOnChanges(changes: SimpleChanges): void {
-        //console.log(changes);
-        console.log("Existen cambios en las propiedades");
+        // console.log(changes);
+        console.log('Existen cambios en las propiedades');
     }
 
-    //Cuando se carga la directiva cuando es lanzado solo se hace una vez
+    // Cuando se carga la directiva cuando es lanzado solo se hace una vez
     ngOnInit(): void {
         console.log('Metodo on init lanzado');
     }
 
     // se ejecuta cada evento dentro de la pagina
     ngDoCheck(): void {
-        //console.log('El DoCheck se ha ejecutado');
+        // console.log('El DoCheck se ha ejecutado');
     }
 
     ngOnDestroy(): void {
         console.log('ngOnDestroy Se va a eliminar el componente')
     }
 
-    emitirEvento(){
-        this.pasameLosDatos.emit({ 
+    emitirEvento() {
+        this.pasameLosDatos.emit({
             'nombre': this.nombre,
             'metros': this.metros,
             'vegetacion': this.vegetacion,

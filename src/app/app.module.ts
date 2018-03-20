@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { routing, appRoutingProviders  } from './app.routing';
@@ -19,6 +20,12 @@ import { AnimalsComponent } from './components/animals/animals.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+
+// services
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -30,11 +37,15 @@ import { KeepersComponent } from './components/keepers/keepers.component';
     ContactComponent,
     HomeComponent,
     KeepersComponent,
-    SimpleTinyComponent
+    SimpleTinyComponent,
+    RegisterComponent,
+    LoginComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     routing,
     BrowserAnimationsModule,
     NoopAnimationsModule,
@@ -42,7 +53,8 @@ import { KeepersComponent } from './components/keepers/keepers.component';
     AdminModule
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    // UserService
   ],
   bootstrap: [AppComponent]
 })
