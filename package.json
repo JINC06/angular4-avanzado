@@ -11,7 +11,7 @@
         "e2e": "ng e2e"
     },
     "private": true,
-    "dependencies": {
+    "dependencies":  {
         "@angular/animations": "^4.2.4",
         "@angular/common": "^4.2.4",
         "@angular/compiler": "^4.2.4",
@@ -25,7 +25,7 @@
         "core-js": "^2.4.1",
         "jquery": "1.12",
         "jquery-dotdotdot": "^1.8.2",
-        "rxjs": "^5.4.2",
+        "rxjs": "^5.5.7",
         "tinymce": "^4.7.9",
         "zone.js": "^0.8.14"
     },
